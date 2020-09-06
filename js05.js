@@ -1,6 +1,5 @@
 (function($, window) {
     function emailCheck(email) {
-      var email = $('#email').val();
       if (email == '') {
         alert('メールアドレスを入力してください');
       } else if (email.indexOf('@') < 0) {
@@ -9,7 +8,6 @@
     }
     
     function passwordCheck(password) {
-      var password = $('#password').val();
       if (password == '') {
         alert('パスワードを入力してください');
       } else if (password.length < 6) {
@@ -18,8 +16,8 @@
     }
   
   $('#login').click(function() {
-    emailCheck(email);
-    passwordCheck(password);
+    emailCheck($('#email').val());
+    passwordCheck($('#password').val());
   });
   
 })(jQuery, window);
